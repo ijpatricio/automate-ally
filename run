@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -e
+
+function help {
+  echo "$0 <task> <args>"
+  echo "Tasks:"
+  compgen -A function | cat -n
+}
+
+function default {
+  help
+}
+
+#TIMEFORMAT="Task completed in %3lR"
+time "${@:-default}"
