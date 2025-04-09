@@ -1,4 +1,14 @@
-# Trying out N8N
+<p align="center">
+<img src="./art/logo-cover.png" style="width: 500px; border-radius: 12px; margin: 20px; box-shadow: 5px 5px 20px rgb(45 114 253);" >
+</p>
+
+# Exploring N8N and integrate with a Laravel Backend
+
+This repo is a hybrid product of livestreaming: https://www.youtube.com/@PatricioOnCode/streams
+
+We're exploring N8N, applying real world cases, learning fundamentals.
+
+The end goal is to have AI, Chatbots, Automations, Workflows, alongside a Laravel App.
 
 ## Up and running
 
