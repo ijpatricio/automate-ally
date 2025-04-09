@@ -28,7 +28,9 @@ Artisan migrate:fresh --seed
 On the first run, we set up the user.
 
 Email: test@example.com
+
 // We need to use a lower and upper, plus a digit
+
 Password: Password1
 
 ### N8N_BASE_URL
