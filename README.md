@@ -21,6 +21,11 @@ Npm ci
 Npm run build
 Artisan key:generate
 Artisan migrate:fresh --seed
+Start Sail
+
+# Run the command, N8N will give different outputs
+sail artisan app:test-trigger-book-reads 3
+sail artisan app:test-trigger-book-reads 11
 ```
 
 ## N8N
@@ -32,6 +37,8 @@ Email: test@example.com
 // We need to use a lower and upper, plus a digit
 
 Password: Password1
+
+Import the workflow from: `<project_root>/n8n/workflows/Book_readers_endpoint.json`
 
 ### N8N_BASE_URL
 

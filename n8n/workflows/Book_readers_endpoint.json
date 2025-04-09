@@ -1,0 +1,85 @@
+{
+  "name": "Book readers endpoint",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "book-reads",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "bedc6508-1215-4d2f-b615-e3906f10c138",
+      "name": "Webhook",
+      "webhookId": "0f7a8d02-01e1-490d-ba6e-95210f988693"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  \n  if ($input.first().json.body.books < 5) {\n    $input.first().json.message = \"You're a scroller!\"\n  } else {\n    $input.first().json.message = \"What a great reader!!\"\n  }\n\n\n  console.log(\n    $input.first().json\n  )\n\n  \n}\n\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        280,
+        0
+      ],
+      "id": "e627c8ff-e2cd-48ab-a88c-d9de569c6713",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"message\": \"{{ $json.message }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        580,
+        0
+      ],
+      "id": "0f0bbf31-6c8e-43e7-9e80-f08599c581ad",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1b6d3511-bec3-4778-9c2b-e144d9ba1718",
+  "meta": {
+    "instanceId": "74fa19c21b0c9eaf1aa55219c03d2ead55a54e6c9f0f6f4944268ed8706c2d09"
+  },
+  "id": "mnxBTtfbAP5mO9il",
+  "tags": []
+}
