@@ -1,4 +1,9 @@
+## 2025-04-12
 
+Exploring alongside video: https://www.youtube.com/watch?v=LqVo5dasBh0
+
+- We start a simple Chat with RAG system
+- It's still non-functional, as it's not ingesting the PDF, and that's what we will start with on the next stream.
 
 ## 2025-04-09
 
